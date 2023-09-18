@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import { SetupContext } from './context/SetupContext';
 import { LoginPage } from './features/auth';
 import { AdminPage } from './features/admin';
+import { LoginContext } from './context/LoginContext';
 
 export const Router = () => {
   const setupContext = useContext(SetupContext);
@@ -19,6 +20,14 @@ export const Router = () => {
             <Route element={<Layout />}>
               <Route index element={<HomePage />} />
               <Route path="auth/login" element={<LoginPage />} />
+              {match(LoginContext)
+              .with({isLoggedIn: true}, ()=> 
+               <Route path="admin" element={<AdminPage />} />)
+              .otherwise(
+                () => (
+                  <Route path="auth/login" element={<LoginPage />} />
+                )
+               )}
               <Route path="admin" element={<AdminPage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Route>
