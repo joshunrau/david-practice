@@ -15,7 +15,7 @@ export const LoginPage = () => {
             notification.addNotification({type:'warning', message: 'user does not exist'})
           }
           else{
-            
+            notification.addNotification({type:'success', message: 'successfully logged in'})
           }
         }}
       />

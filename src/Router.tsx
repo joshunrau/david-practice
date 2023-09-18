@@ -30,7 +30,7 @@ export const Router = () => {
                 )
                )}
                <Route path="auth/signup" element={<SignUpPage/>}/>
-              <Route path="admin" element={<AdminPage />} />
+              {/* <Route path="admin" element={<AdminPage />} /> */}
               <Route path="*" element={<Navigate to="/" />} />
             </Route>
           </Routes>
