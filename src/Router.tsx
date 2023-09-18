@@ -9,6 +9,7 @@ import { SetupContext } from './context/SetupContext';
 import { LoginPage } from './features/auth';
 import { AdminPage } from './features/admin';
 import { LoginContext } from './context/LoginContext';
+import { SignUpPage } from './features/auth/pages/SignUpPage';
 
 export const Router = () => {
   const setupContext = useContext(SetupContext);
@@ -28,6 +29,7 @@ export const Router = () => {
                   <Route path="auth/login" element={<LoginPage />} />
                 )
                )}
+               <Route path="auth/signup" element={<SignUpPage/>}/>
               <Route path="admin" element={<AdminPage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Route>

@@ -19,6 +19,7 @@ export const LoginPage = () => {
           }
         }}
       />
+      <p className="mt-10">Don't have a account? sign up <a className="text-blue-600 hover:opacity-40" href="/auth/signup">here</a></p>
     </div>
   );
 };

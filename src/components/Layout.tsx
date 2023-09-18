@@ -9,6 +9,7 @@ export const Layout = () => {
           <nav className="flex gap-3">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/auth/login">Login</NavLink>
+            <NavLink to="/auth/signup">Sign Up</NavLink>
             <NavLink to="/admin">Admin</NavLink>
           </nav>
         </div>
