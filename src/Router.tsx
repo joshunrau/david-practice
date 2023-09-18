@@ -13,6 +13,7 @@ import { SignUpPage } from './features/auth/pages/SignUpPage';
 
 export const Router = () => {
   const setupContext = useContext(SetupContext);
+  const loginContext = useContext(LoginContext);
   return (
     <BrowserRouter>
       {match(setupContext)
@@ -21,16 +22,16 @@ export const Router = () => {
             <Route element={<Layout />}>
               <Route index element={<HomePage />} />
               <Route path="auth/login" element={<LoginPage />} />
-              {match(LoginContext)
+              {/* {match(loginContext)
               .with({isLoggedIn: true}, ()=> 
                <Route path="admin" element={<AdminPage />} />)
               .otherwise(
                 () => (
-                  <Route path="auth/login" element={<LoginPage />} />
+                  <Route path="/auth/login" element={<LoginPage />} />
                 )
-               )}
+               )} */}
                <Route path="auth/signup" element={<SignUpPage/>}/>
-              {/* <Route path="admin" element={<AdminPage />} /> */}
+              <Route path="admin" element={<AdminPage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Route>
           </Routes>
