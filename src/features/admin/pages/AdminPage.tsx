@@ -5,6 +5,7 @@ import { UsersDatabase } from '../../../utils/users-database';
 export const AdminPage = () => {
   const users = UsersDatabase.getUsers();
   const isLoggedin = useContext(LoginContext);
+  
   if(!isLoggedin){
     return(<p>access denied</p>);
   }

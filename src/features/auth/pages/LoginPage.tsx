@@ -15,9 +15,8 @@ export const LoginPage = () => {
     }
     else{
       notification.addNotification({type:'success', message: 'successfully logged in'})
-      UsersDatabase.createUser(userData);
       loginContext.setIsLoggedIn(true);
-      
+
     }
    
   };

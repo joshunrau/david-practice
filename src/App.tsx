@@ -7,11 +7,10 @@ import { LoginContextProvider } from './context/LoginContext';
 export const App = () => {
   return (
     <SetupContextProvider>
-    
+      <LoginContextProvider>
         <NotificationHub />
-        <Router>
-        <LoginContextProvider></LoginContextProvider>
-        </Router>
+        <Router/>
+        </LoginContextProvider>
     </SetupContextProvider>
     
   );
